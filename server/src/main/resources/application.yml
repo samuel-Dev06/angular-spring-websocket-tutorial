@@ -1,0 +1,17 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/studentdb
+        username: postgres
+        password: password
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update # Automatically updates the schema without dropping data
+        show-sql: true # Logs SQL queries
+        database-platform: org.hibernate.dialect.PostgreSQLDialect # Explicitly set PostgreSQL dialect
+        defer-datasource-initialization: true # Required if you have SQL initialization scripts
+
+    logging:
+        level:
+            org.hibernate.SQL: DEBUG
+            org.hibernate.type.descriptor.sql.BasicBinder: TRACE
